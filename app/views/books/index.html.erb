@@ -1,0 +1,58 @@
+<h1>Hacker Fiction</h1>
+<table class="table">
+  <tr class="theadrow">
+    <th class="thead">Name</th>
+    <th class="thead">Authors</th>
+    <th class="thead">Isbn</th>
+    <th class="thead">Amazon</th>
+    <!-- <th>Amazon link</th> -->
+    <th class="thead">Kindle</th>
+    <!-- <th>Kindle link</th> -->
+    <th class="thead">Barnes</th>
+    <!-- <th>Barnes link</th> -->
+    <th class="thead">Nook</th>
+    <!-- <th>Nook link</th> -->
+    <th class="thead">Rating</th>
+	<th class="thead">Like</th>
+    	<th class="thead">Dislike</th>
+    		<th class="thead"></th>
+  		<th class="thead"></th>
+  </tr>
+
+<% @books.each do |book| %>
+  <tr class="trow">
+    <td class="tdrow"><%= link_to book.name, book %></td>
+    <td class="tdrow"><%= book.authors %></td>
+    <td class="tdrow"><%= book.isbn %></td>
+    <% if book.amazon %>
+	<td class="tdbutton"><a href="<%= book.amazon_link %>"><img src="/images/amazon_icon.png"></a></td>
+    <% else %>
+	<td class="tdrow"></td>
+    <% end %>
+    <% if book.kindle %>
+        <td class="tdbutton"><a href="<%= book.kindle_link %>"><img src="/images/kindle_icon.png"></a></td>
+    <% else %>
+        <td class="tdrow"></td>
+    <% end %>
+    <% if book.barnes %>
+        <td class="tdbutton"><a href="<%= book.barnes_link %>"><img src="/images/bn_icon.png"></a></td>
+    <% else %>
+        <td class="tdrow"></td>
+    <% end %>
+    <% if book.nook %>
+        <td class="tdbutton"><a href="<%= book.nook_link %>"><img src="/images/nook_icon.png"></a></td>
+    <% else %>
+        <td class="tdrow"></td>
+    <% end %>
+    <td class="tdrow"><%= book.rating %></td>
+	<td class="tdrow"><%= link_to '+', up_book_path(book) %></td>
+	<td class="tdrow"><%= link_to '-', down_book_path(book) %></td>
+		    <!-- <td class="tdrow"><%= link_to 'Show', book %></td> -->
+    			<td class="tdrow"><%= link_to 'Edit', edit_book_path(book) %></td>
+    			<td class="tdrow"><%= link_to 'Destroy', book, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+	<%= link_to 'New Book', new_book_path %>
