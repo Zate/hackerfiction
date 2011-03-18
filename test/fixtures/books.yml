@@ -1,0 +1,29 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  authors: MyString
+  isbn: 1
+  amazon: false
+  amazon_link: MyString
+  kindle: false
+  kindle_link: MyString
+  barnes: false
+  barnes_link: MyString
+  nook: false
+  nook_link: MyString
+  rating: 1
+
+two:
+  name: MyString
+  authors: MyString
+  isbn: 1
+  amazon: false
+  amazon_link: MyString
+  kindle: false
+  kindle_link: MyString
+  barnes: false
+  barnes_link: MyString
+  nook: false
+  nook_link: MyString
+  rating: 1
