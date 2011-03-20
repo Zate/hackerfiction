@@ -1,6 +1,9 @@
 Hackerfiction::Application.routes.draw do
 
 
+  resources :users
+  match '/signup', :to => 'users#new'
+
   resources :books
   root :to => "Books#index"
   match 'books/:id/up' => 'books#uprate', :as => :uprate

@@ -30,3 +30,7 @@ gem 'sqlite3'
 #   gem 'webrat'
 # end
 gem "bcrypt-ruby", :require => "bcrypt"
+group :development do
+	gem 'rspec-rails'
+	gem 'annotate-models'
+end
